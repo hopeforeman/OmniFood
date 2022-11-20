@@ -1,0 +1,492 @@
+/*
+---COLORS---
+Primary: #e67e22
+
+[maketintsandshades.com]
+Tints: #fae5d3
+Shades: #cf711f
+Accents: 
+Grays: #555 #333
+
+*/
+
+:root {
+  --primary-color: #e67e22;
+  --tint-one: #fdf2e9; /* (nav and hero background color) */
+  --tint-two: #fae5d3;
+  --shade-one: #cf711f;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #555;
+}
+
+/* RESUABLE GRID TEMPLATES*/
+
+.container {
+  max-width: 120rem;
+  padding: 0 9.6rem;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  row-gap: 9.6rem;
+  column-gap: 4rem;
+}
+
+.grid--2-cols {
+  grid-template-columns: repeat(2, 50%);
+}
+
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4-cols {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid--center-v {
+  align-items: center;
+}
+
+/* HEADER SECTION */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fdf2e9;
+  /* Because we want header to be sticky*/
+  height: 8rem;
+  padding: 0 4.6rem;
+}
+
+.logo {
+  height: 2rem;
+}
+/* NAV BAR */
+
+.main-nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.main-nav-link:link,
+.main-nav-link:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 1.2rem;
+  transition: all 0.3rem;
+}
+
+.main-nav-link:hover,
+.main-nav-link:active {
+  color: var(--shade-one);
+}
+
+.main-nav-link.nav-cta:link,
+.main-nav-link.nav-cta:visited {
+  padding: 0.8rem 1.5rem;
+  border-radius: 9px;
+  color: #fff;
+  background-color: var(--primary-color);
+}
+
+.main-nav-link.nav-cta:hover,
+.main-nav-link.nav-cta:active {
+  background-color: var(--shade-one);
+}
+
+/* HERO SECTION */
+
+.section-hero {
+  background-color: var(--tint-one);
+  padding: 3rem 0;
+}
+
+.hero {
+  max-width: 130rem;
+  /* margin: 0 auto; */
+  padding: 0 3.2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9.1rem;
+  align-items: center;
+}
+
+.heading-primary {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.05;
+  color: #333;
+  letter-spacing: -0.5px;
+  margin-bottom: 3.2rem;
+}
+
+.hero-decription {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  margin-bottom: 4.8rem;
+}
+
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 600;
+  padding: 1.2rem 1.9rem;
+  border-radius: 9px;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.btn--full:link,
+.btn--full:visited {
+  background-color: var(--primary-color);
+}
+
+.btn--full:hover,
+.btn--full:active {
+  background-color: #cf711f;
+}
+
+.btn--outline:link,
+.btn--outline:visited {
+  background-color: #fff;
+  color: #555;
+}
+
+.btn--outline:hover,
+.btn--outline:active {
+  background-color: var(--tint-one);
+  box-shadow: inset 0 0 0 3px #fff;
+}
+
+.hero-img {
+  width: 100%;
+}
+
+/* helper classes */
+.margin-right-sm {
+  margin-right: 1.6rem !important;
+}
+
+.margin-bottom-md {
+  margin-bottom: 4rem !important;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.delivered-meals {
+  display: flex;
+  margin-top: 6rem;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.delivered-imgs {
+  display: flex;
+}
+
+.delivered-imgs img {
+  height: 4.8rem;
+  width: 4.8rem; /*for safari browser*/
+  border-radius: 50%;
+  margin-right: -1.6rem;
+  border: 2px solid var(--tint-one);
+}
+
+.delivered-imgs img:last-child {
+  margin: 0;
+}
+
+.delivered-text {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.delivered-text span {
+  color: var(--shade-one);
+  font-weight: 700;
+}
+
+/* FEATURED IN SECTION */
+
+.heading-featured-in {
+  color: #999;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.75px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 2.4rem;
+}
+
+/* HOW IT WORKS SECTION */
+
+.section-featured {
+  padding: 4.8rem 0 4.2rem;
+}
+
+.section-how {
+  padding: 6rem 0 6rem 0;
+  max-width: 100rem;
+}
+
+.logos {
+  display: flex;
+  justify-content: center;
+  column-gap: 3rem;
+}
+
+.logo {
+  height: 2rem;
+  opacity: 50%;
+  filter: brightness(0);
+}
+
+.heading-secondary {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #555;
+  letter-spacing: -0.5;
+  line-height: 1.2;
+  margin-bottom: 8rem;
+}
+
+.heading-tertinary {
+  font-size: 1.5rem;
+  font-weight: 700;
+  /* color: #333; */
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+  margin-bottom: 3.2rem;
+}
+
+.subheading {
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.6px;
+  display: block;
+  color: var(--shade-one);
+  text-transform: uppercase;
+  margin-bottom: 1.3rem;
+}
+
+.step-img {
+  width: 45%;
+}
+
+.step-img-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-img-box::before,
+.step-img-box::after {
+  content: "";
+  display: block;
+  width: 75%;
+  padding-bottom: 75%;
+  background-color: var(--tint-one);
+  border-radius: 50%;
+
+  position: absolute;
+  z-index: -2;
+}
+
+.step-img-box::after {
+  content: "";
+  display: block;
+  width: 55%;
+  padding-bottom: 55%;
+  background-color: var(--tint-two);
+  z-index: -1;
+}
+
+.step-description {
+  font-size: 1.3rem;
+  line-height: 2rem;
+}
+
+.step-number {
+  font-size: 7rem;
+  font-weight: 600;
+  color: var(--tint-one);
+  margin-bottom: 1rem;
+}
+
+/* MEALS SECTION */
+
+.section-meals {
+  padding: 9.6rem 0;
+}
+
+.meal {
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+  border-radius: 11px;
+  overflow: hidden;
+  transition: all 0.4s;
+}
+
+.meal:hover {
+  transform: translateY(-1rem);
+}
+
+.meal-content {
+  padding: 3rem 3.2rem 3.2rem 3.2rem;
+}
+
+.meal-tags {
+  display: flex;
+  gap: 0.4rem;
+  margin-bottom: 1.2rem;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #333;
+  border-radius: 100px;
+}
+
+.tag--vegetarian {
+  background-color: #51cf66;
+}
+
+.tag--vegan {
+  background-color: #94d82d;
+}
+
+.tag--paleo {
+  background-color: #ffd43b;
+}
+
+.meal-title {
+  font-size: 2rem;
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.meal-attributes {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.meal-data {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.meal-img {
+  width: 100%;
+}
+
+.meal-icon {
+  height: 2rem;
+  width: 2rem;
+  color: var(--primary-color);
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.list-item {
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.list-icon {
+  width: 2rem;
+  height: 2rem;
+  color: var(--primary-color);
+}
+
+.all-recipes {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.link:link,
+.link:visited {
+  display: inline-block;
+  color: var(--primary-color);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 0.5rem;
+  transition: all 0.3s;
+}
+
+.link:hover,
+.link:active {
+  color: var(--shade-one);
+  border-bottom: 1px solid transparent;
+}
+
+/* TESTIMONIALS SECTION */
+
+.section-testimonials {
+  background-color: var(--tint-one);
+}
+
+.testimonials-container {
+  padding: 8.6rem;
+}
+
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 15rem;
+  row-gap: 6rem;
+}
+
+.testimonial-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.testimonial-text {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.testimonial-name {
+  font-size: 0.9rem;
+  color: #777;
+}
